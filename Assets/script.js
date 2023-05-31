@@ -5,19 +5,18 @@ const forecastTempData = [];
 const forecastHumidityData = [];
 const forecastWindSpeedData = [];
 const searchedCities = [];
-//.includes
 
 console.log(inputFormEl);
 
 function getCityData(event) {
     event.preventDefault();
     let searchInput;
-    //Checking if city button was clicked
+    //Check if city button was clicked
     if (event.target.matches("button")) {
         searchInput = event.target.textContent;
         searchInput = formatString(searchInput);
     }
-    //Checking if city has already been search whether to create a new button
+    
     else {
         searchInput = cityInputEl.value;
         searchInput = formatString(searchInput);
@@ -26,9 +25,8 @@ function getCityData(event) {
 
     const localQueryUrl = 'https://api.openweathermap.org/data/2.5/weather?q=' + searchInput + '&units=Imperial&appid=875ae9b4b42c4506811e477b3cb501c6'
 
-    //console.log(localQueryUrl);
-    //separate functions
-    //Get Data for Current Weather//
+    
+    //Get Data for Current Weather
     fetch(localQueryUrl)
         .then(response => response.json())
 
@@ -91,19 +89,19 @@ function getLatLonData(coord) {
                 if (data.list[i].dt_txt.includes("12:00:00")) {
                     if (forecastTempData.length < 5) {
 
-                        //Push next 5 days temp at 12pm into an empty array
+                        //Next 5 days 12PM temp into an empty array
                         let kelvinTemp = data.list[i].main.temp;
                         let fahrenheitTemp = (kelvinTemp - 273.15) * 9 / 5 + 32;
                         forecastTempData.push(fahrenheitTemp.toFixed(1))
                     }
 
                     if (forecastHumidityData.length < 5) {
-                        //Push next 5 days humidity at 12pm into an empty array
+                        //Next 5 days 12PM humidity into an empty array
                         forecastHumidityData.push(data.list[i].main.humidity);
                     }
 
                     if (forecastWindSpeedData.length < 5) {
-                        //Push next 5 days wind speed at 12pm into an empty array
+                        //Next 5 days 12PM wind speed into an empty array
                         let windSpeed = data.list[i].wind.speed;
                         windSpeed = windSpeed * 2.237;
                         forecastWindSpeedData.push(windSpeed.toFixed(1));

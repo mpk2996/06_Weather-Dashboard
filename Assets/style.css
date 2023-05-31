@@ -65,13 +65,15 @@ body {
   h2 {
     margin: 0 0 10px;
     text-align: center;
+    margin-top: 15px;
+    margin-bottom: 15px;
   }
   
   #forecast-cards {
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
-    margin-bottom: 10px;
+    margin-bottom: 20px;
   }
   
   .forecast-card {
@@ -84,16 +86,11 @@ body {
     box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
   }
   
-  #search-history {
-    text-align: center;
-  }
-  
-  #history-list {
+  #search-history ul {
     list-style: none;
     padding: 0;
   }
-  
-  #history-list li {
+  #search-history li {
     margin-bottom: 5px;
     cursor: pointer;
   }
