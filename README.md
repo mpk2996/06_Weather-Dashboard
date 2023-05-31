@@ -8,3 +8,4 @@ This application is a weather dashboard that allows the user to search for a cit
 ![Weather Dashboard](./Assets/weather-dashboard-preview.png)
 
 ## Deployed Application
+https://mpk2996.github.io/06_Weather-Dashboard/
