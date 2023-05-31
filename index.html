@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="./Assets/style.css">
+  <title>Weather Dashboard</title>
+</head>
+
+<body>
+  <header>
+    <h1>Weather Dashboard</h1>
+    <form id="search-form">
+      <input type="text" id="city-input" placeholder="Enter city name">
+      <button type="submit">Search</button>
+    </form>
+  </header>
+
+  <main>
+    <div id="current-weather">
+      <h2 id="city-name"> Current Weather</h2>
+      <p id="date"></p>
+      <div id="weather-icon"></div>
+      <p>Temperature: <span id="temperature"></span></p>
+      <p>Humidity: <span id="humidity"></span></p>
+      <p>Wind Speed: <span id="wind-speed"></span></p>
+    </div>
+
+    <h2>5-Day Forecast</h2>
+    <div id="forecast-cards">
+      <div class="forecast-card container-day0">
+        <p class="date"></p>
+        <!-- <img class="weather-icon" src="" alt="Weather Icon"> -->
+        <p class="temperature0"> Temperature: </p>
+        <p class="humidity0"> Humidity: </p>
+        <p class="wind-speed0"> Wind-Speed: </p>
+      </div>
+      <div class=" forecast-card container-day1">
+        <p class="date"></p>
+        <!-- <img class="weather-icon" src="" alt="Weather Icon"> -->
+        <p class="temperature1"> Temperature: </p>
+        <p class="humidity1"> Humidity: </p>
+        <p class="wind-speed1"> Wind-Speed: </p>
+      </div>
+      <div class=" forecast-card container-day2">
+        <p class="date"></p>
+        <!-- <img class="weather-icon" src="" alt="Weather Icon"> -->
+        <p class="temperature2"> Temperature: </p>
+        <p class="humidity2"> Humidity: </p>
+        <p class="wind-speed2"> Wind-Speed: </p>
+      </div>
+      <div class=" forecast-card container-day3">
+        <p class="date"></p>
+        <!-- <img class="weather-icon" src="" alt="Weather Icon"> -->
+        <p class="temperature3"> Temperature: </p>
+        <p class="humidity3"> Humidity: </p>
+        <p class="wind-speed3"> Wind-Speed: </p>
+      </div>
+      <div class=" forecast-card container-day4">
+        <p class="date"></p>
+        <!-- <img class="weather-icon" src="" alt="Weather Icon"> -->
+        <p class="temperature4"> Temperature: </p>
+        <p class="humidity4"> Humidity: </p>
+        <p class="wind-speed4"> Wind-Speed: </p>
+      </div>
+    </div>
+    <div id="search-history">
+      <h2>Search History</h2>
+      <ul id="city-list"></ul>
+    </div>
+  </main>
+
+  <script src="./Assets/script.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/dayjs/dayjs.min.js"></script>
+
+</body>
+
+</html>
