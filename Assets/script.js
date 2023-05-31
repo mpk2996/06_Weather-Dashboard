@@ -89,19 +89,19 @@ function getLatLonData(coord) {
                 if (data.list[i].dt_txt.includes("12:00:00")) {
                     if (forecastTempData.length < 5) {
 
-                        //Next 5 days 12PM temp into an empty array
+                        //Next 5 days temp into an empty array
                         let kelvinTemp = data.list[i].main.temp;
                         let fahrenheitTemp = (kelvinTemp - 273.15) * 9 / 5 + 32;
                         forecastTempData.push(fahrenheitTemp.toFixed(1))
                     }
 
                     if (forecastHumidityData.length < 5) {
-                        //Next 5 days 12PM humidity into an empty array
+                        //Next 5 days humidity into an empty array
                         forecastHumidityData.push(data.list[i].main.humidity);
                     }
 
                     if (forecastWindSpeedData.length < 5) {
-                        //Next 5 days 12PM wind speed into an empty array
+                        //Next 5 days wind speed into an empty array
                         let windSpeed = data.list[i].wind.speed;
                         windSpeed = windSpeed * 2.237;
                         forecastWindSpeedData.push(windSpeed.toFixed(1));
@@ -129,14 +129,13 @@ function renderForecast(forecastTempData, forecastHumidityData, forecastWindSpee
 }
 
 function appendDayOfWeek() {
-    // Get the current date
+    // Current date
     let currentDate = new Date();
     currentDate = currentDate + 1;
     let existingDays = []
-    // Use a loop to iterate through each container-day element
     for (let i = 0; i < 5; i++) {
         // Use day.js to format the date
-        let formattedDate = dayjs(currentDate).add(i + 1, 'day').format('dddd');
+        let formattedDate = dayjs(currentDate).add(i + 1, 'day').format('MM/DD/YYYY');
 
         // Get the container-day element
         let container = document.querySelector(`.container-day${i}`);
